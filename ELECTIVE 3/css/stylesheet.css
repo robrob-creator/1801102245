@@ -1,0 +1,12 @@
+.bg{
+    margin-top: -4;
+    background-size: cover;
+    position: absolute;;
+    background-repeat: no-repeat;
+    z-index: -9;
+   width:100%;
+  
+}
+ .body{
+     background-color: rgb(172, 233, 254);
+ }
