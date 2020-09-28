@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>sign up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js\script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  
+      
+  </style>
+</head>
+<body class="body" style="background-image: url('images/b1.png');">
+
+
+<div class="contain2 mx-auto">
+<form class="mt-xl-5 shadow p-3 mb-5 bg-white rounded ">
+    <h6 id="create_header">CREATE ACCOUNT <img src="images/sign_up.png" alt="sign_up" width="30" height="30"></h6>
+    <small id="create_header" class="form-text text-muted pb-2">Please fill in this for to create account.</small>
+    <div class="row">
+    <div class="class form-group col">
+      <label for="exampleInputEmail1">First name:</label>
+      <input type="text" class="form-control" id="firstName" aria-describedby="firstName" required>
+    </div>
+    <div class="class form-group col">
+      <label for="exampleInputEmail1">Last name:</label>
+      <input type="text" class="form-control" id="lastName" aria-describedby="lastName" required>
+    </div>
+  </div>
+    <div class="class form-group ">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" required>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Repeat Password</label>
+      <input type="password" class="form-control" id="repassword" name="repassword" required>
+    </div>
+
+    <div class="alert alert-warning" style="color:green;" id="CheckPasswordMatch">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <p id="Alert_message"></p>
+  </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="check">
+      <label class="form-check-label" for="exampleCheck1">Show password</label>
+
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="Submit" onclick="signupData()">Submit</button>
+    <button type="submit" class="btn btn-primary-outline float-right" id="signUp" onclick=""><a href="index.html">Sign in </a>now?</button>
+  </form>
+  </div>
+
+   
+<footer class="footer2 font-small blue ">
+
+
+  <div class="footer-copyright text-center py-3 ">© 2020 Copyright
+  </div>
+</footer>
+
+<script>
+  //mao ni sya ang password para sa pag compare sa password
+  function checkPasswordMatch() {
+      let password = $("#password").val();
+      let confirmPassword = $("#repassword").val();
+      if (password != confirmPassword){
+          $("#CheckPasswordMatch").show();
+         // $("#CheckPasswordMatch").fadeIn();
+          $("#Alert_message").html("Passwords does not match.");
+        }
+        else
+            $("#Alert_message").html("Passwords match.");
+           
+    }
+  
+  $(document).ready(function () {
+     $("#repassword").keyup(checkPasswordMatch);
+  });
+
+  $(document).ready(function(){
+    $("#check").change(function(){
+  
+ //mao ni sya ang show and hide password code sa checkbox
+  if($(this).is(':checked')){
+   $("#password, #repassword").attr("type","text");
+   $("#check").text("Hide");
+   
+  }else{
+   $("#password, #repassword").attr("type","password");
+   $("#check").text("Show");
+  }
+ 
+ });
+        });
+
+  
+  </script>
+
+</body>
+ 
+</html>

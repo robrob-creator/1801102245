@@ -1,12 +1,40 @@
-.bg{
-    margin-top: -4;
-    background-size: cover;
-    position: absolute;;
-    background-repeat: no-repeat;
-    z-index: -9;
-   width:100%;
-  
-}
- .body{
+
+ .body
+{
+     width:100%;
      background-color: rgb(172, 233, 254);
- }
+     background-size: cover;
+     background-repeat: no-repeat;
+     overflow: hidden;
+ 
+}
+.contain
+{
+    width: 350px;
+}
+.contain2
+{
+    width: 430px;
+ 
+}
+.footer2
+{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: cadetblue;
+}
+.footer
+{
+
+  position: absolute;
+  bottom:0px;
+  width: 100%;
+  background-color: cadetblue;
+}
+#CheckPasswordMatch{
+  width:430px;
+  position: fixed;
+  display: none;
+  z-index: 2000;
+}
